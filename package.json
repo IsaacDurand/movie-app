@@ -1,0 +1,15 @@
+{
+  "name": "movie-app",
+  "version": "1.0.0",
+  "description": "Search for information about your favorite movies",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/IsaacDurand/movie-app"
+  },
+  "author": "IsaacDurand",
+  "license": "ISC"
+}
