@@ -1,9 +1,20 @@
-<div style="display: flex; justify-content: space-between">
-    <div style="width: 50%">
-    Left Side
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Movie App</title>
+</head>
+<body ng-app="app">
+    <div ng-controller="MovieController"
+         style="display: flex; justify-content: space-between">
+        <div style="width: 50%">
+        Left Side
+        </div>
+        <div style="width: 50%">
+            Right Side
+        </div>
     </div>
-    <div style="width: 50%">
-        Right Side
-    </div>
-</div>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="./../dist/build.js"></script>
+</body>
+</html>

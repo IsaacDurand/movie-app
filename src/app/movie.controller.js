@@ -22,7 +22,7 @@
         ////////////////
 
         function activate() {
-            //
+            console.log('MovieController activated!');
         }
     }
 
