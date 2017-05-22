@@ -5,13 +5,17 @@
     <title>Movie App</title>
 </head>
 <body ng-app="app">
-    <div ng-controller="MovieController"
+    <div ng-controller="MovieController as vm"
          style="display: flex; justify-content: space-between">
         <div style="width: 50%">
         Left Side
         </div>
         <div style="width: 50%">
-            Right Side
+            <h1>Movies</h1>
+            <input ng-change="vm.updateList()"
+                   ng-model="vm.searchString"
+                   placeholder="Search for a movie"
+                   type="text">
         </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
