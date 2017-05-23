@@ -4,12 +4,19 @@ $clutterBlue: #38435e;
 $clutterGray: #5c5d5e;
 $clutterOrange: #ff4508;
 
+$defaultBorderRadius: 5px;
+$defaultCushion: 10px;
+$searchPanelWidth: 275px;
+$thinBorderWidth: 2px;
+
+
+// Default styling for portrait phones and up
 body {
   color: $clutterGray;
   font-family: 'Tahoma', sans-serif;
 
   h1 {
-    border-bottom: 2px solid $clutterOrange;
+    border-bottom: $thinBorderWidth solid $clutterOrange;
   }
 
   h2, h3 {
@@ -21,50 +28,14 @@ body {
   }
 }
 
-@media (min-width: 576px) {
-  #main {
-    position: relative;
-
-    #detail-panel {
-      margin-right: 295px;
-    }
-
-    #toggle-details {
-      display: none;
-    }
-
-    #movie-details {
-      display: block;
-    }
-
-    #search-panel {
-      position: absolute;
-      right: 0;
-      top: 0;
-    }
-  }
-}
-
-@media (min-width: 992px) {
-  #main {
-    #small-poster {
-      display: none;
-    }
-
-    #large-poster {
-      display: block;
-    }
-  }
-}
-
 #detail-panel, #search-panel {
-  padding: 10px;
+  padding: $defaultCushion;
 }
 
 #toggle-details {
   color: $clutterAqua;
   display: block;
-  margin-bottom: 10px;
+  margin-bottom: $defaultCushion;
   text-align: center;
   text-decoration: underline;
 
@@ -103,10 +74,10 @@ body {
 }
 
 actor-card {
-  border: 2px solid $clutterAqua;
-  border-radius: 5px;
-  margin: 5px;
-  padding: 10px;
+  border: $thinBorderWidth solid $clutterAqua;
+  border-radius: $defaultBorderRadius;
+  margin: $defaultCushion / 2;
+  padding: $defaultCushion;
   text-align: center;
   width: 150px;
 
@@ -117,29 +88,29 @@ actor-card {
 
 #search-panel {
   background: $clutterBackground;
-  border-radius: 5px;
+  border-radius: $defaultBorderRadius;
   margin: 0 auto;
-  width: 275px;
+  width: $searchPanelWidth;
 
   h2 {
     text-align: left;
   }
 
   input {
-    border-radius: 5px;
+    border-radius: $defaultBorderRadius;
     font-size: 14px;
   }
 }
 
 #movie-list {
-  margin-top: 20px;
+  margin-top: $defaultCushion * 2;
 }
 
 .movie-listing {
-  border: 2px solid white;
-  border-radius: 5px;
-  margin: 10px 0;
-  padding: 10px;
+  border: $thinBorderWidth solid white;
+  border-radius: $defaultBorderRadius;
+  margin: $defaultCushion 0;
+  padding: $defaultCushion;
   text-align: center;
   width: 250px;
 
@@ -150,5 +121,43 @@ actor-card {
   &:hover {
     border-color: $clutterOrange;
     cursor: pointer;
+  }
+}
+
+// Additional styling for landscape phones and up
+@media (min-width: 576px) {
+  #main {
+    position: relative;
+
+    #detail-panel {
+      margin-right: $searchPanelWidth + $defaultCushion * 2;
+    }
+
+    #toggle-details {
+      display: none;
+    }
+
+    #movie-details {
+      display: block;
+    }
+
+    #search-panel {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+  }
+}
+
+// Additional styling for desktop
+@media (min-width: 992px) {
+  #main {
+    #small-poster {
+      display: none;
+    }
+
+    #large-poster {
+      display: block;
+    }
   }
 }
