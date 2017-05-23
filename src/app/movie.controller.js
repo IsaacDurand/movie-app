@@ -21,7 +21,9 @@
         vm.searchString = '';
         vm.selectMovie = selectMovie;
         vm.selectedMovie = null;
+        vm.shouldShowDetails = true;
         vm.title = 'MovieController';
+        vm.toggleShowDetails = toggleShowDetails;
         vm.updateList = updateList;
 
         ////////////////
@@ -33,6 +35,10 @@
                 .then(function (cast) {
                     vm.cast = cast;
                 })
+        }
+
+        function toggleShowDetails() {
+            vm.shouldShowDetails = !vm.shouldShowDetails;
         }
 
         function updateList() {
