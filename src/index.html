@@ -37,7 +37,7 @@
                 </div>
                 <div ng-if="!vm.isListLoading">
                     <div ng-if="vm.movies.length">
-                        <movie-listing ng-repeat="movie in vm.movies track by movie.id"
+                        <movie-listing ng-repeat="movie in vm.movies | orderBy: 'title' track by movie.id"
                                        movie="movie"
                                        ng-click="vm.selectMovie(movie)">
                         </movie-listing>
