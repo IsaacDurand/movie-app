@@ -62,7 +62,7 @@
                    type="text">
             <div ng-if="vm.searchString">
                 <p ng-if="vm.isListLoading">
-                    Searching for matches...
+                    Searching for matches for "<span ng-bind="vm.searchString"></span>"...
                 </p>
                 <div ng-if="!vm.isListLoading">
                     <div id="movie-list"

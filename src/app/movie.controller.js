@@ -45,8 +45,10 @@
             vm.isListLoading = true;
             searchService.getMovies(vm.searchString)
                 .then(function (movies) {
-                    vm.movies = movies;
-                    vm.isListLoading = false;
+                    if (movies) {
+                        vm.movies = movies;
+                        vm.isListLoading = false;
+                    }
                 });
         }
     }

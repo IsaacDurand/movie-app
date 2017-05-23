@@ -14,14 +14,21 @@
     /* @ngInject */
     function searchService($http, $q) {
         var castEndpoint = 'https://clutter-front-end-interview.herokuapp.com/movies/{ID}/cast_members.json';
-        var movieEndpoint = 'https://clutter-front-end-interview.herokuapp.com/movies.json';
+        var movieEndpoint = 'https://clutter-front-end-interview.herokuapp.com/movies.json?q[title_cont]=';
         var service = {
             getCast: getCast,
             getMovies: getMovies
         };
+        var canceler;
+
         return service;
 
         ////////////////
+
+        // If the request is canceled, return a null value so that updateList will not update the list of movies.
+        function errorHandler() {
+            return null;
+        }
 
         function getCast(movieId) {
             var resourceUri = castEndpoint.replace('{ID}', movieId);
@@ -30,15 +37,28 @@
         }
 
         function getMovies(searchString) {
-            // TODO: Whenever this runs, cancel any pending requests
-            if (!searchString) {
+            // Cancel any pending requests to this endpoint
+            if (canceler) {
+                canceler.resolve();
+            }
+
+            if (searchString) {
+
+                // If there is a search string, initiate a new request and return the promise.
+                canceler = $q.defer();
+                var config = {
+                    method: 'GET',
+                    timeout: canceler.promise,
+                    url: movieEndpoint + searchString
+                };
+                return $http(config)
+                    .then(successHandler, errorHandler);
+            } else {
+
+                // If the search string is empty, immediately resolve return a promise that resolves to an empty array.
                 var deferred = $q.defer();
                 deferred.resolve([]);
                 return deferred.promise;
-            } else {
-                var resourceUri = movieEndpoint + '?q[title_cont]=' + searchString;
-                return $http.get(resourceUri)
-                    .then(successHandler)
             }
         }
 
