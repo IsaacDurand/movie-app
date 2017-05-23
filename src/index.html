@@ -12,7 +12,9 @@
             <div ng-if="!vm.selectedMovie" id="starting-screen">
                 <h2>Cut through the clutter to find your favorite movies</h2>
             </div>
-            <div ng-if="vm.selectedMovie" id="selected-movie">
+            <div ng-class="{ 'show-details': vm.shouldShowDetails }"
+                 ng-if="vm.selectedMovie"
+                 id="selected-movie">
                 <h2>
                     <span ng-bind="vm.selectedMovie.title"></span>
                     <span ng-bind="vm.selectedMovie.release_date | date: '(yyyy)' "></span>
@@ -21,7 +23,7 @@
                        ng-bind="vm.shouldShowDetails ? 'Hide details' : 'Show details'"
                        ng-click="vm.toggleShowDetails()">
                 </small>
-                <div ng-if="vm.shouldShowDetails">
+                <div>
                     <div id="movie-details">
                         <img id="large-poster"
                              ng-src="https://image.tmdb.org/t/p/w500/{{vm.selectedMovie.poster_path}}"
@@ -57,7 +59,8 @@
                     Searching for matches...
                 </p>
                 <div ng-if="!vm.isListLoading">
-                    <div ng-if="vm.movies.length">
+                    <div id="movie-list"
+                         ng-if="vm.movies.length">
                         <movie-listing ng-repeat="movie in vm.movies | orderBy: 'title' track by movie.id"
                                        movie="movie"
                                        ng-click="vm.selectMovie(movie)">

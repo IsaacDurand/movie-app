@@ -17,6 +17,14 @@ body {
       margin-right: 295px;
     }
 
+    #toggle-details {
+      display: none;
+    }
+
+    #movie-details {
+      display: flex;
+    }
+
     #search-panel {
       position: absolute;
       right: 0;
@@ -59,9 +67,13 @@ body {
 }
 
 #movie-details {
-  display: flex;
+  display: none;
   flex-wrap: wrap;
   justify-content: space-around;
+
+  .show-details & {
+    display: flex;
+  }
 
   p {
     max-width: 500px;
@@ -103,6 +115,10 @@ actor-card {
     border-radius: 5px;
     font-size: 14px;
   }
+}
+
+#movie-list {
+  margin-top: 20px;
 }
 
 .movie-listing {
