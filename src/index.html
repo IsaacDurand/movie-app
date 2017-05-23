@@ -16,6 +16,9 @@
                    ng-model="vm.searchString"
                    placeholder="Search for a movie"
                    type="text">
+            <movie-listing ng-repeat="movie in vm.movies track by movie.id"
+                           movie="movie">
+            </movie-listing>
         </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
