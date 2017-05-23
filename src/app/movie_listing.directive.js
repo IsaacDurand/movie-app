@@ -23,7 +23,7 @@
             scope: {
                 movie: '='
             },
-            template: '<div style="border: 1px solid black">' +
+            template: '<div class="movie-listing">' +
             '<img ng-src="https://image.tmdb.org/t/p/w500/{{vm.movie.poster_path}}" ng-attr-alt="Poster for {{vm.movie.title}}" width="250px">' +
             '<p ng-bind="vm.movie.title"></p>' +
             '<p>Released <span ng-bind="vm.movie.release_date | date: \'longDate\' "></span></p></div>'

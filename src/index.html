@@ -8,7 +8,7 @@
 <body ng-app="app">
     <h1>Clutter Movies</h1>
     <div id="main" ng-controller="MovieController as vm">
-        <div>
+        <div id="detail-panel">
             <div ng-if="!vm.selectedMovie" id="starting-screen">
                 <h2>Cut through the clutter to find your favorite movies</h2>
             </div>
@@ -23,10 +23,16 @@
                 </small>
                 <div ng-if="vm.shouldShowDetails">
                     <div id="movie-details">
-                        <img class="shrink-to-fit"
+                        <img id="large-poster"
                              ng-src="https://image.tmdb.org/t/p/w500/{{vm.selectedMovie.poster_path}}"
                              ng-attr-alt="Large poster for {{vm.selectedMovie.title}}"
+                             height="725px"
                              width="500px">
+                        <img id="small-poster"
+                             ng-src="https://image.tmdb.org/t/p/w500/{{vm.selectedMovie.poster_path}}"
+                             ng-attr-alt="Large poster for {{vm.selectedMovie.title}}"
+                             height="375px"
+                             width="250px">
                         <div>
                             <p ng-bind="vm.selectedMovie.overview"></p>
                         </div>
@@ -40,16 +46,16 @@
                 </div>
             </div>
         </div>
-        <div>
+        <div id="search-panel">
             <h2>Search</h2>
             <input ng-change="vm.updateList()"
                    ng-model="vm.searchString"
                    placeholder="Type a movie title"
                    type="text">
             <div ng-if="vm.searchString">
-                <div ng-if="vm.isListLoading">
+                <p ng-if="vm.isListLoading">
                     Searching for matches...
-                </div>
+                </p>
                 <div ng-if="!vm.isListLoading">
                     <div ng-if="vm.movies.length">
                         <movie-listing ng-repeat="movie in vm.movies | orderBy: 'title' track by movie.id"
@@ -57,15 +63,15 @@
                                        ng-click="vm.selectMovie(movie)">
                         </movie-listing>
                     </div>
-                    <div ng-if="!vm.movies.length">
+                    <p ng-if="!vm.movies.length">
                         No movies found with <span ng-bind="vm.searchString"></span> in their title.
                         Try another search term!
-                    </div>
+                    </p>
                 </div>
             </div>
-            <div ng-if="!vm.searchString">
+            <p ng-if="!vm.searchString">
                 Start typing to search our movie database.
-            </div>
+            </p>
         </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>

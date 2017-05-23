@@ -9,10 +9,31 @@ body {
   }
 }
 
-#starting-screen {
-  img {
-    max-width: 100%;
-    height: auto;
+@media (min-width: 576px) {
+  #main {
+    position: relative;
+
+    #detail-panel {
+      margin-right: 295px;
+    }
+
+    #search-panel {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  #main {
+    #small-poster {
+      display: none;
+    }
+
+    #large-poster {
+      display: block;
+    }
   }
 }
 
@@ -29,21 +50,20 @@ body {
   }
 }
 
-#selected-movie {
+#detail-panel {
   padding: 10px;
+}
+
+#large-poster {
+  display: none;
 }
 
 #movie-details {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-
-  img {
-    margin: 0 10px;
-  }
+  justify-content: space-around;
 
   p {
-    margin: 0 10px;
     max-width: 500px;
   }
 }
@@ -68,7 +88,32 @@ actor-card {
   }
 }
 
-.shrink-to-fit {
-  max-width: 100%;
-  height: auto;
+#search-panel {
+  background: lightblue;
+  border-radius: 5px;
+  margin: 0 auto;
+  padding: 10px;
+  width: 275px;
+
+  h2 {
+    text-align: left;
+  }
+
+  input {
+    border-radius: 5px;
+    font-size: 14px;
+  }
+}
+
+.movie-listing {
+  border: 2px solid blue;
+  border-radius: 5px;
+  margin: 5px 0;
+  padding: 10px;
+  text-align: center;
+  width: 250px;
+
+  p:first-of-type {
+    font-weight: bold;
+  }
 }
