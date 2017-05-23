@@ -3,29 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <title>Movie App</title>
+    <link href="./../dist/styles.css" rel="stylesheet">
 </head>
 <body ng-app="app">
-    <div ng-controller="MovieController as vm"
-         style="display: flex; justify-content: space-between">
-        <div style="width: 50%">
+    <div ng-controller="MovieController as vm">
+        <h1>Clutter Movies</h1>
+        <div>
             <div ng-if="!vm.selectedMovie">
                 Movie Facts
             </div>
-            <div ng-if="vm.selectedMovie">
+            <div ng-if="vm.selectedMovie" id="selected-movie">
                 <h1>
                     <span ng-bind="vm.selectedMovie.title"></span>
                     <span ng-bind="vm.selectedMovie.release_date | date: '(yyyy)' "></span>
                 </h1>
-                <p ng-bind="vm.selectedMovie.overview"></p>
-                <img ng-src="https://image.tmdb.org/t/p/w500/{{vm.selectedMovie.poster_path}}"
-                     ng-attr-alt="Large poster for {{vm.selectedMovie.title}}"
-                     width="500px">
-                <actor-card ng-repeat="actor in vm.cast track by actor.tmdb_id"
-                            actor="actor">
-                </actor-card>
+                <div id="movie-details">
+                    <img class="shrink-to-fit"
+                         ng-src="https://image.tmdb.org/t/p/w500/{{vm.selectedMovie.poster_path}}"
+                         ng-attr-alt="Large poster for {{vm.selectedMovie.title}}"
+                         width="500px">
+                    <div>
+                        <p ng-bind="vm.selectedMovie.overview"></p>
+                    </div>
+                </div>
+                <div id="actor-container">
+                    <actor-card ng-repeat="actor in vm.cast track by actor.tmdb_id"
+                                actor="actor">
+                    </actor-card>
+                </div>
             </div>
         </div>
-        <div style="width: 50%">
+        <div>
             <h1>Movies</h1>
             <input ng-change="vm.updateList()"
                    ng-model="vm.searchString"

@@ -23,11 +23,11 @@
             scope: {
                 actor: '='
             },
-            template: '<div style="border: 1px solid blue">' +
+            template: '<div>' +
             '<img ng-if="vm.actor.profile_path" ng-src="https://image.tmdb.org/t/p/w500/{{vm.actor.profile_path}}"' +
-            'ng-attr-alt="Photo of {{vm.actor.name}}" width="250px">' +
-            '<p ng-if="!vm.actor.profile_path">No photo available</p>' +
-            '<p><span ng-bind="vm.actor.name"></span> as <span ng-bind="vm.actor.character"></span></p></div>'
+            'ng-attr-alt="Photo of {{vm.actor.name}}" width="150px">' +
+            '<p class="no-photo" ng-if="!vm.actor.profile_path">No photo available</p>' +
+            '<p><span ng-bind="vm.actor.name"></span><br /> as <br /><span ng-bind="vm.actor.character"></span></p></div>'
         };
         return directive;
 
