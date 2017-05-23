@@ -23,7 +23,10 @@
             scope: {
                 movie: '='
             },
-            template: '<p>{{ vm.movie.title }}</p>'
+            template: '<div style="border: 1px solid black">' +
+            '<img ng-src="https://image.tmdb.org/t/p/w500/{{vm.movie.poster_path}}" ng-attr-alt="Poster for {{vm.movie.title}}" width="250px">' +
+            '<p ng-bind="vm.movie.title"></p>' +
+            '<p>Released <span ng-bind="vm.movie.release_date | date: \'longDate\' "></span></p></div>'
             // TODO: consider using inline template instead for performance
             // This URL would need to be absolute
             // templateUrl: './app/movie_listing.html'
