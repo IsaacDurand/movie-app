@@ -41,6 +41,7 @@
         }
 
         function updateList() {
+            vm.movies = [];
             vm.isListLoading = true;
             searchService.getMovies(vm.searchString)
                 .then(function (movies) {
