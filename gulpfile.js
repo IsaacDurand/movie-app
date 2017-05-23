@@ -1,5 +1,6 @@
 var gulp = require('gulp');
 var concat = require('gulp-concat');
+var sass = require('gulp-sass');
 
 var clientApp = './src/app/';
 
@@ -14,8 +15,15 @@ gulp.task('build', function () {
         .pipe(gulp.dest('./dist/'));
 });
 
-gulp.task('watch', function () {
-    gulp.watch(clientApp + '*.js', ['build']);
+gulp.task('scss', function () {
+    return gulp.src('./src/styles.scss')
+        .pipe(sass().on('error', sass.logError))
+        .pipe(gulp.dest('./dist'));
 });
 
-gulp.task('default', ['build', 'watch']);
+gulp.task('watch', function () {
+    gulp.watch(clientApp + '*.js', ['build']);
+    gulp.watch('./src/styles.scss', ['scss'])
+});
+
+gulp.task('default', ['scss', 'build', 'watch']);
