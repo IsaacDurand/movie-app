@@ -15,8 +15,10 @@
     /* @ngInject */
     function MovieController(searchService) {
         var vm = this;
+        vm.cast = [];
         vm.movies = [];
         vm.searchString = '';
+        vm.selectMovie = selectMovie;
         vm.selectedMovie = null;
         vm.title = 'MovieController';
         vm.updateList = updateList;
@@ -27,6 +29,15 @@
 
         function activate() {
             console.log('MovieController activated!');
+        }
+
+        function selectMovie(movie) {
+            vm.selectedMovie = movie;
+            vm.cast = [];
+            searchService.getCast(vm.selectedMovie.id)
+                .then(function (cast) {
+                    vm.cast = cast;
+                })
         }
 
         function updateList() {

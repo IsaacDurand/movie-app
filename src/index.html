@@ -8,7 +8,30 @@
     <div ng-controller="MovieController as vm"
          style="display: flex; justify-content: space-between">
         <div style="width: 50%">
-        Left Side
+            <div ng-if="!vm.selectedMovie">
+                Movie Facts
+            </div>
+            <div ng-if="vm.selectedMovie">
+                <h1>
+                    <span ng-bind="vm.selectedMovie.title"></span>
+                    <span ng-bind="vm.selectedMovie.release_date | date: '(yyyy)' "></span>
+                </h1>
+                <p ng-bind="vm.selectedMovie.overview"></p>
+                <img ng-src="https://image.tmdb.org/t/p/w500/{{vm.selectedMovie.poster_path}}"
+                     ng-attr-alt="Large poster for {{vm.selectedMovie.title}}"
+                     width="500px">
+                <!--TODO: make this a directive so we can use it elsewhere?-->
+                <div ng-repeat="actor in vm.cast track by actor.tmdb_id" style="border: 1px solid blue">
+                    <img ng-if="actor.profile_path"
+                         ng-src="https://image.tmdb.org/t/p/w500/{{actor.profile_path}}"
+                         ng-attr-alt="Photo of {{actor.name}}"
+                         width="250px">
+                    <p ng-if="!actor.profile_path">No photo available</p>
+                    <p>
+                        <span ng-bind="actor.name"></span> as <span ng-bind="actor.character"></span>
+                    </p>
+                </div>
+            </div>
         </div>
         <div style="width: 50%">
             <h1>Movies</h1>
@@ -17,7 +40,8 @@
                    placeholder="Search for a movie"
                    type="text">
             <movie-listing ng-repeat="movie in vm.movies track by movie.id"
-                           movie="movie">
+                           movie="movie"
+                           ng-click="vm.selectMovie(movie)">
             </movie-listing>
         </div>
     </div>

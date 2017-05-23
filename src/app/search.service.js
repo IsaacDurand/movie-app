@@ -13,13 +13,25 @@
 
     /* @ngInject */
     function searchService($http, $q) {
+        var castEndpoint = 'https://clutter-front-end-interview.herokuapp.com/movies/{ID}/cast_members.json';
         var movieEndpoint = 'https://clutter-front-end-interview.herokuapp.com/movies.json';
         var service = {
+            getCast: getCast,
             getMovies: getMovies
         };
         return service;
 
         ////////////////
+
+        function getCast(movieId) {
+            var resourceUri = castEndpoint.replace('{ID}', movieId);
+            return $http.get(resourceUri)
+            // TODO: consolidate with what's below
+                .then(function (res) {
+                    console.log('res', res);
+                    return res.data;
+                })
+        }
 
         function getMovies(searchString) {
             // TODO: Whenever this runs, cancel any pending requests
