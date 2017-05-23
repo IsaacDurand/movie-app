@@ -17,7 +17,7 @@
             controllerAs: 'vm',
             restrict: 'E',
             scope: {
-                actor: '='
+                actor: '<'
             },
             template: '<div><img ng-attr-alt="Photo of {{vm.actor.name}}" ng-if="vm.actor.profile_path" ' +
             'ng-src="https://image.tmdb.org/t/p/w500/{{vm.actor.profile_path}}" width="150px">' +

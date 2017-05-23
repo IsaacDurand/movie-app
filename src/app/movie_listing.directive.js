@@ -20,7 +20,7 @@
             controllerAs: 'vm',
             restrict: 'E',
             scope: {
-                movie: '='
+                movie: '<'
             },
             template: '<div class="movie-listing"><img ng-attr-alt="Poster for {{vm.movie.title}}" ' +
             'ng-src="https://image.tmdb.org/t/p/w500/{{vm.movie.poster_path}}" height="375px" width="250px">' +
