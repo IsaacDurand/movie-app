@@ -28,7 +28,6 @@
             return $http.get(resourceUri)
             // TODO: consolidate with what's below
                 .then(function (res) {
-                    console.log('res', res);
                     return res.data;
                 })
         }

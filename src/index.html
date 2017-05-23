@@ -20,7 +20,6 @@
                 <img ng-src="https://image.tmdb.org/t/p/w500/{{vm.selectedMovie.poster_path}}"
                      ng-attr-alt="Large poster for {{vm.selectedMovie.title}}"
                      width="500px">
-                <!--TODO: make this a directive so we can use it elsewhere?-->
                 <actor-card ng-repeat="actor in vm.cast track by actor.tmdb_id"
                             actor="actor">
                 </actor-card>
@@ -32,10 +31,26 @@
                    ng-model="vm.searchString"
                    placeholder="Search for a movie"
                    type="text">
-            <movie-listing ng-repeat="movie in vm.movies track by movie.id"
-                           movie="movie"
-                           ng-click="vm.selectMovie(movie)">
-            </movie-listing>
+            <div ng-if="vm.searchString">
+                <div ng-if="vm.isListLoading">
+                    Searching for matches...
+                </div>
+                <div ng-if="!vm.isListLoading">
+                    <div ng-if="vm.movies.length">
+                        <movie-listing ng-repeat="movie in vm.movies track by movie.id"
+                                       movie="movie"
+                                       ng-click="vm.selectMovie(movie)">
+                        </movie-listing>
+                    </div>
+                    <div ng-if="!vm.movies.length">
+                        No movies found with <span ng-bind="vm.searchString"></span> in their title.
+                        Try another search term!
+                    </div>
+                </div>
+            </div>
+            <div ng-if="!vm.searchString">
+                Start typing a movie name to search our movie database.
+            </div>
         </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>

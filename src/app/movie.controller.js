@@ -16,6 +16,7 @@
     function MovieController(searchService) {
         var vm = this;
         vm.cast = [];
+        vm.isListLoading = false;
         vm.movies = [];
         vm.searchString = '';
         vm.selectMovie = selectMovie;
@@ -23,13 +24,7 @@
         vm.title = 'MovieController';
         vm.updateList = updateList;
 
-        activate();
-
         ////////////////
-
-        function activate() {
-            console.log('MovieController activated!');
-        }
 
         function selectMovie(movie) {
             vm.selectedMovie = movie;
@@ -41,11 +36,13 @@
         }
 
         function updateList() {
+            vm.isListLoading = true;
             searchService.getMovies(vm.searchString)
             // This function runs regardless of whether the HTTP request is successful
-            .then(function (movies) {
-                vm.movies = movies;
-            });
+                .then(function (movies) {
+                    vm.movies = movies;
+                    vm.isListLoading = false;
+                });
         }
     }
 
