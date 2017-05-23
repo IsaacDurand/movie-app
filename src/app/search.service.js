@@ -13,49 +13,58 @@
 
     /* @ngInject */
     function searchService($http, $q) {
+        var castCanceler;
         var castEndpoint = 'https://clutter-front-end-interview.herokuapp.com/movies/{ID}/cast_members.json';
+        var movieCanceler;
         var movieEndpoint = 'https://clutter-front-end-interview.herokuapp.com/movies.json?q[title_cont]=';
         var service = {
             getCast: getCast,
             getMovies: getMovies
         };
-        var canceler;
 
         return service;
 
         ////////////////
 
-        // If the request is canceled, return a null value so that updateList will not update the list of movies.
+        // If the request is canceled, return a null value so that the controller will not update the movie or cast list.
         function errorHandler() {
             return null;
         }
 
         function getCast(movieId) {
-            var resourceUri = castEndpoint.replace('{ID}', movieId);
-            return $http.get(resourceUri)
-                .then(successHandler)
+            if (castCanceler) {
+                castCanceler.resolve();
+            }
+
+            castCanceler = $q.defer();
+            var config = {
+                method: 'GET',
+                timeout: castCanceler.promise,
+                url: castEndpoint.replace('{ID}', movieId)
+            };
+            return $http(config)
+                .then(successHandler, errorHandler);
         }
 
         function getMovies(searchString) {
+
             // Cancel any pending requests to this endpoint
-            if (canceler) {
-                canceler.resolve();
+            if (movieCanceler) {
+                movieCanceler.resolve();
             }
 
+            // If there is a search string, initiate a new request and return the promise.
+            // Otherwise, immediately resolve and return a promise that resolves to an empty array.
             if (searchString) {
-
-                // If there is a search string, initiate a new request and return the promise.
-                canceler = $q.defer();
+                movieCanceler = $q.defer();
                 var config = {
                     method: 'GET',
-                    timeout: canceler.promise,
+                    timeout: movieCanceler.promise,
                     url: movieEndpoint + searchString
                 };
                 return $http(config)
                     .then(successHandler, errorHandler);
             } else {
-
-                // If the search string is empty, immediately resolve return a promise that resolves to an empty array.
                 var deferred = $q.defer();
                 deferred.resolve([]);
                 return deferred.promise;

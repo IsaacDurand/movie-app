@@ -41,16 +41,22 @@
                         </div>
                     </div>
                     <h3>Cast</h3>
-                    <div id="actor-container"
-                         ng-if="vm.cast.length">
-                        <actor-card ng-repeat="actor in vm.cast track by actor.tmdb_id"
-                                    actor="actor">
-                        </actor-card>
-                    </div>
                     <p id="loading-cast"
-                       ng-if="!vm.cast.length">
+                       ng-if="vm.isCastLoading">
                         Loading cast information...
                     </p>
+                    <div ng-if="!vm.isCastLoading">
+                        <div id="actor-container"
+                             ng-if="vm.cast.length">
+                            <actor-card ng-repeat="actor in vm.cast track by actor.tmdb_id"
+                                        actor="actor">
+                            </actor-card>
+                        </div>
+                        <p ng-if="!vm.cast.length">
+                            No cast information available
+                        </p>
+                    </div>
+
                 </div>
             </div>
         </div>

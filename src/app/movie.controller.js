@@ -15,6 +15,7 @@
     function MovieController(searchService) {
         var vm = this;
         vm.cast = [];
+        vm.isCastLoading = false;
         vm.isListLoading = false;
         vm.movies = [];
         vm.searchString = '';
@@ -28,11 +29,20 @@
         ////////////////
 
         function selectMovie(movie) {
+            if (!movie || !movie.id) {
+                return;
+            }
+
             vm.selectedMovie = movie;
             vm.cast = [];
+            vm.isCastLoading = true;
+
             searchService.getCast(vm.selectedMovie.id)
                 .then(function (cast) {
-                    vm.cast = cast;
+                    if (cast) {
+                        vm.cast = cast;
+                        vm.isCastLoading = false;
+                    }
                 });
         }
 
@@ -43,6 +53,7 @@
         function updateList() {
             vm.movies = [];
             vm.isListLoading = true;
+
             searchService.getMovies(vm.searchString)
                 .then(function (movies) {
                     if (movies) {
