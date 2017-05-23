@@ -13,10 +13,10 @@
                 Movie Facts
             </div>
             <div ng-if="vm.selectedMovie" id="selected-movie">
-                <h1>
+                <h2>
                     <span ng-bind="vm.selectedMovie.title"></span>
                     <span ng-bind="vm.selectedMovie.release_date | date: '(yyyy)' "></span>
-                </h1>
+                </h2>
                 <div id="movie-details">
                     <img class="shrink-to-fit"
                          ng-src="https://image.tmdb.org/t/p/w500/{{vm.selectedMovie.poster_path}}"
@@ -26,6 +26,7 @@
                         <p ng-bind="vm.selectedMovie.overview"></p>
                     </div>
                 </div>
+                <h3>Cast</h3>
                 <div id="actor-container">
                     <actor-card ng-repeat="actor in vm.cast track by actor.tmdb_id"
                                 actor="actor">
