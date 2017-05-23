@@ -21,16 +21,9 @@
                      ng-attr-alt="Large poster for {{vm.selectedMovie.title}}"
                      width="500px">
                 <!--TODO: make this a directive so we can use it elsewhere?-->
-                <div ng-repeat="actor in vm.cast track by actor.tmdb_id" style="border: 1px solid blue">
-                    <img ng-if="actor.profile_path"
-                         ng-src="https://image.tmdb.org/t/p/w500/{{actor.profile_path}}"
-                         ng-attr-alt="Photo of {{actor.name}}"
-                         width="250px">
-                    <p ng-if="!actor.profile_path">No photo available</p>
-                    <p>
-                        <span ng-bind="actor.name"></span> as <span ng-bind="actor.character"></span>
-                    </p>
-                </div>
+                <actor-card ng-repeat="actor in vm.cast track by actor.tmdb_id"
+                            actor="actor">
+                </actor-card>
             </div>
         </div>
         <div style="width: 50%">
