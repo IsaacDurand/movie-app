@@ -7,14 +7,15 @@
 </head>
 <body ng-app="app">
     <h1>Clutter Movies</h1>
-    <div id="main" ng-controller="MovieController as vm">
+    <div id="main"
+         ng-controller="MovieController as vm">
         <div id="detail-panel">
-            <div ng-if="!vm.selectedMovie" id="starting-screen">
-                <h2>Cut through the clutter to find your favorite movies</h2>
+            <div ng-if="!vm.selectedMovie">
+                <h2 ng-if="!vm.movies.length">Cut through the clutter to find your favorite movies.</h2>
+                <h2 ng-if="vm.movies.length">Select a movie to see details.</h2>
             </div>
             <div ng-class="{ 'show-details': vm.shouldShowDetails }"
-                 ng-if="vm.selectedMovie"
-                 id="selected-movie">
+                 ng-if="vm.selectedMovie">
                 <h2>
                     <span ng-bind="vm.selectedMovie.title"></span>
                     <span ng-bind="vm.selectedMovie.release_date | date: '(yyyy)' "></span>
@@ -23,8 +24,8 @@
                        ng-bind="vm.shouldShowDetails ? 'Hide details' : 'Show details'"
                        ng-click="vm.toggleShowDetails()">
                 </small>
-                <div>
-                    <div id="movie-details">
+                <div id="movie-details">
+                    <div id="movie-overview">
                         <img id="large-poster"
                              ng-src="https://image.tmdb.org/t/p/w500/{{vm.selectedMovie.poster_path}}"
                              ng-attr-alt="Large poster for {{vm.selectedMovie.title}}"
