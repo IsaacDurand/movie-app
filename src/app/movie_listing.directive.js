@@ -9,40 +9,29 @@
         .module('app')
         .directive('movieListing', movieListing);
 
-    movieListing.$inject = ['$http'];
+    movieListing.$inject = [];
 
     /* @ngInject */
     // TODO: remove any unneeded things
-    function movieListing($http) {
+    function movieListing() {
         var directive = {
             bindToController: true,
             controller: MovieListingController,
             controllerAs: 'vm',
-            link: link,
             restrict: 'E',
             scope: {
                 movie: '='
             },
-            template: '<div class="movie-listing">' +
-            '<img ng-src="https://image.tmdb.org/t/p/w500/{{vm.movie.poster_path}}" ng-attr-alt="Poster for {{vm.movie.title}}" width="250px">' +
+            template: '<div class="movie-listing"><img ng-attr-alt="Poster for {{vm.movie.title}}" ' +
+            'ng-src="https://image.tmdb.org/t/p/w500/{{vm.movie.poster_path}}" height="375px" width="250px">' +
             '<p ng-bind="vm.movie.title"></p>' +
             '<p>Released <span ng-bind="vm.movie.release_date | date: \'longDate\' "></span></p></div>'
-            // TODO: consider using inline template instead for performance
-            // This URL would need to be absolute
-            // templateUrl: './app/movie_listing.html'
         };
         return directive;
-
-        function link(scope, element, attrs) {
-            // TODO: remove this if I'm not using it
-        }
     }
 
-    MovieListingController.$inject = ['$http'];
-
     /* @ngInject */
-    function MovieListingController($http) {
-        // Do stuff
+    function MovieListingController() {
         var vm = this;
     }
 

@@ -9,7 +9,6 @@
         .module('app')
         .controller('MovieController', MovieController);
 
-    // TODO: Remove any unused dependencies
     MovieController.$inject = ['searchService'];
 
     /* @ngInject */
@@ -34,7 +33,7 @@
             searchService.getCast(vm.selectedMovie.id)
                 .then(function (cast) {
                     vm.cast = cast;
-                })
+                });
         }
 
         function toggleShowDetails() {
@@ -44,7 +43,6 @@
         function updateList() {
             vm.isListLoading = true;
             searchService.getMovies(vm.searchString)
-            // This function runs regardless of whether the HTTP request is successful
                 .then(function (movies) {
                     vm.movies = movies;
                     vm.isListLoading = false;
