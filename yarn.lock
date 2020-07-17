@@ -146,6 +146,13 @@ async-foreach@^0.1.3:
   resolved "https://auctioncorp.jfrog.io/auctioncorp/api/npm/npm-internal/async-foreach/-/async-foreach-0.1.3.tgz#36121f845c0578172de419a97dbeb1d16ec34542"
   integrity sha1-NhIfhFwFeBct5Bmpfb6x0W7DRUI=
 
+async@^2.6.2:
+  version "2.6.3"
+  resolved "https://auctioncorp.jfrog.io/auctioncorp/api/npm/npm-internal/async/-/async-2.6.3.tgz#d72625e2344a3656e3a3ad4fa749fa83299d82ff"
+  integrity sha1-1yYl4jRKNlbjo61Pp0n6gymdgv8=
+  dependencies:
+    lodash "^4.17.14"
+
 asynckit@^0.4.0:
   version "0.4.0"
   resolved "https://auctioncorp.jfrog.io/auctioncorp/api/npm/npm-internal/asynckit/-/asynckit-0.4.0.tgz#c79ed97f7f34cb8f2ba1bc9790bcc366474b4b79"
@@ -183,6 +190,11 @@ base@^0.11.1:
     isobject "^3.0.1"
     mixin-deep "^1.2.0"
     pascalcase "^0.1.1"
+
+basic-auth@^1.0.3:
+  version "1.1.0"
+  resolved "https://auctioncorp.jfrog.io/auctioncorp/api/npm/npm-internal/basic-auth/-/basic-auth-1.1.0.tgz#45221ee429f7ee1e5035be3f51533f1cdfd29884"
+  integrity sha1-RSIe5Cn37h5QNb4/UVM/HN/SmIQ=
 
 bcrypt-pbkdf@^1.0.0:
   version "1.0.2"
@@ -364,6 +376,11 @@ color-support@^1.1.3:
   resolved "https://auctioncorp.jfrog.io/auctioncorp/api/npm/npm-internal/color-support/-/color-support-1.1.3.tgz#93834379a1cc9a0c61f82f52f0d04322251bd5a2"
   integrity sha1-k4NDeaHMmgxh+C9S8NBDIiUb1aI=
 
+colors@^1.4.0:
+  version "1.4.0"
+  resolved "https://auctioncorp.jfrog.io/auctioncorp/api/npm/npm-internal/colors/-/colors-1.4.0.tgz#c50491479d4c1bdaed2c9ced32cf7c7dc2360f78"
+  integrity sha1-xQSRR51MG9rtLJztMs98fcI2D3g=
+
 combined-stream@^1.0.6, combined-stream@~1.0.6:
   version "1.0.8"
   resolved "https://auctioncorp.jfrog.io/auctioncorp/api/npm/npm-internal/combined-stream/-/combined-stream-1.0.8.tgz#c3d45a8b34fd730631a110a8a2520682b31d5a7f"
@@ -403,6 +420,11 @@ core-util-is@1.0.2, core-util-is@~1.0.0:
   resolved "https://auctioncorp.jfrog.io/auctioncorp/api/npm/npm-internal/core-util-is/-/core-util-is-1.0.2.tgz#b5fd54220aa2bc5ab57aab7140c940754503c1a7"
   integrity sha1-tf1UIgqivFq1eqtxQMlAdUUDwac=
 
+corser@^2.0.1:
+  version "2.0.1"
+  resolved "https://auctioncorp.jfrog.io/auctioncorp/api/npm/npm-internal/corser/-/corser-2.0.1.tgz#8eda252ecaab5840dcd975ceb90d9370c819ff87"
+  integrity sha1-jtolLsqrWEDc2XXOuQ2TcMgZ/4c=
+
 cross-spawn@^3.0.0:
   version "3.0.1"
   resolved "https://auctioncorp.jfrog.io/auctioncorp/api/npm/npm-internal/cross-spawn/-/cross-spawn-3.0.1.tgz#1256037ecb9f0c5f79e3d6ef135e30770184b982"
@@ -436,6 +458,13 @@ debug@^2.2.0, debug@^2.3.3:
   integrity sha1-XRKFFd8TT/Mn6QpMk/Tgd6U2NB8=
   dependencies:
     ms "2.0.0"
+
+debug@^3.1.1:
+  version "3.2.6"
+  resolved "https://auctioncorp.jfrog.io/auctioncorp/api/npm/npm-internal/debug/-/debug-3.2.6.tgz#e83d17de16d8a7efb7717edbe5fb10135eee629b"
+  integrity sha1-6D0X3hbYp++3cX7b5fsQE17uYps=
+  dependencies:
+    ms "^2.1.1"
 
 decamelize@^1.1.2, decamelize@^1.2.0:
   version "1.2.0"
@@ -511,6 +540,16 @@ ecc-jsbn@~0.1.1:
     jsbn "~0.1.0"
     safer-buffer "^2.1.0"
 
+ecstatic@^3.3.2:
+  version "3.3.2"
+  resolved "https://auctioncorp.jfrog.io/auctioncorp/api/npm/npm-internal/ecstatic/-/ecstatic-3.3.2.tgz#6d1dd49814d00594682c652adb66076a69d46c48"
+  integrity sha1-bR3UmBTQBZRoLGUq22YHamnUbEg=
+  dependencies:
+    he "^1.1.1"
+    mime "^1.6.0"
+    minimist "^1.1.0"
+    url-join "^2.0.5"
+
 emoji-regex@^7.0.1:
   version "7.0.3"
   resolved "https://auctioncorp.jfrog.io/auctioncorp/api/npm/npm-internal/emoji-regex/-/emoji-regex-7.0.3.tgz#933a04052860c85e83c122479c4748a8e4c72156"
@@ -534,6 +573,11 @@ escape-string-regexp@^1.0.2:
   version "1.0.5"
   resolved "https://auctioncorp.jfrog.io/auctioncorp/api/npm/npm-internal/escape-string-regexp/-/escape-string-regexp-1.0.5.tgz#1b61c0562190a8dff6ae3bb2cf0200ca130b86d4"
   integrity sha1-G2HAViGQqN/2rjuyzwIAyhMLhtQ=
+
+eventemitter3@^4.0.0:
+  version "4.0.4"
+  resolved "https://auctioncorp.jfrog.io/auctioncorp/api/npm/npm-internal/eventemitter3/-/eventemitter3-4.0.4.tgz#b5463ace635a083d018bdc7c917b4c5f10a85384"
+  integrity sha1-tUY6zmNaCD0Bi9x8kXtMXxCoU4Q=
 
 expand-brackets@^2.1.4:
   version "2.1.4"
@@ -679,6 +723,11 @@ flagged-respawn@^1.0.0:
   version "1.0.1"
   resolved "https://auctioncorp.jfrog.io/auctioncorp/api/npm/npm-internal/flagged-respawn/-/flagged-respawn-1.0.1.tgz#e7de6f1279ddd9ca9aac8a5971d618606b3aab41"
   integrity sha1-595vEnnd2cqarIpZcdYYYGs6q0E=
+
+follow-redirects@^1.0.0:
+  version "1.12.1"
+  resolved "https://auctioncorp.jfrog.io/auctioncorp/api/npm/npm-internal/follow-redirects/-/follow-redirects-1.12.1.tgz#de54a6205311b93d60398ebc01cf7015682312b6"
+  integrity sha1-3lSmIFMRuT1gOY68Ac9wFWgjErY=
 
 for-in@^1.0.1, for-in@^1.0.2:
   version "1.0.2"
@@ -1018,6 +1067,11 @@ has-values@^1.0.0:
     is-number "^3.0.0"
     kind-of "^4.0.0"
 
+he@^1.1.1:
+  version "1.2.0"
+  resolved "https://auctioncorp.jfrog.io/auctioncorp/api/npm/npm-internal/he/-/he-1.2.0.tgz#84ae65fa7eafb165fddb61566ae14baf05664f0f"
+  integrity sha1-hK5l+n6vsWX922FWauFLrwVmTw8=
+
 homedir-polyfill@^1.0.1:
   version "1.0.3"
   resolved "https://auctioncorp.jfrog.io/auctioncorp/api/npm/npm-internal/homedir-polyfill/-/homedir-polyfill-1.0.3.tgz#743298cef4e5af3e194161fbadcc2151d3a058e8"
@@ -1029,6 +1083,31 @@ hosted-git-info@^2.1.4:
   version "2.8.8"
   resolved "https://auctioncorp.jfrog.io/auctioncorp/api/npm/npm-internal/hosted-git-info/-/hosted-git-info-2.8.8.tgz#7539bd4bc1e0e0a895815a2e0262420b12858488"
   integrity sha1-dTm9S8Hg4KiVgVouAmJCCxKFhIg=
+
+http-proxy@^1.18.0:
+  version "1.18.1"
+  resolved "https://auctioncorp.jfrog.io/auctioncorp/api/npm/npm-internal/http-proxy/-/http-proxy-1.18.1.tgz#401541f0534884bbf95260334e72f88ee3976549"
+  integrity sha1-QBVB8FNIhLv5UmAzTnL4juOXZUk=
+  dependencies:
+    eventemitter3 "^4.0.0"
+    follow-redirects "^1.0.0"
+    requires-port "^1.0.0"
+
+http-server@^0.12.3:
+  version "0.12.3"
+  resolved "https://auctioncorp.jfrog.io/auctioncorp/api/npm/npm-internal/http-server/-/http-server-0.12.3.tgz#ba0471d0ecc425886616cb35c4faf279140a0d37"
+  integrity sha1-ugRx0OzEJYhmFss1xPryeRQKDTc=
+  dependencies:
+    basic-auth "^1.0.3"
+    colors "^1.4.0"
+    corser "^2.0.1"
+    ecstatic "^3.3.2"
+    http-proxy "^1.18.0"
+    minimist "^1.2.5"
+    opener "^1.5.1"
+    portfinder "^1.0.25"
+    secure-compare "3.0.1"
+    union "~0.5.0"
 
 http-signature@~1.2.0:
   version "1.2.0"
@@ -1455,7 +1534,7 @@ lodash.templatesettings@^3.0.0:
     lodash._reinterpolate "^3.0.0"
     lodash.escape "^3.0.0"
 
-lodash@^4.0.0, lodash@^4.17.15, lodash@~4.17.10:
+lodash@^4.0.0, lodash@^4.17.14, lodash@^4.17.15, lodash@~4.17.10:
   version "4.17.19"
   resolved "https://auctioncorp.jfrog.io/auctioncorp/api/npm/npm-internal/lodash/-/lodash-4.17.19.tgz#e48ddedbe30b3321783c5b4301fbd353bc1e4a4b"
   integrity sha1-5I3e2+MLMyF4PFtDAfvTU7weSks=
@@ -1557,6 +1636,11 @@ mime-types@^2.1.12, mime-types@~2.1.19:
   dependencies:
     mime-db "1.44.0"
 
+mime@^1.6.0:
+  version "1.6.0"
+  resolved "https://auctioncorp.jfrog.io/auctioncorp/api/npm/npm-internal/mime/-/mime-1.6.0.tgz#32cd9e5c64553bd58d19a568af452acff04981b1"
+  integrity sha1-Ms2eXGRVO9WNGaVor0Uqz/BJgbE=
+
 minimatch@^2.0.1:
   version "2.0.10"
   resolved "https://auctioncorp.jfrog.io/auctioncorp/api/npm/npm-internal/minimatch/-/minimatch-2.0.10.tgz#8d087c39c6b38c001b97fca7ce6d0e1e80afbac7"
@@ -1603,6 +1687,11 @@ ms@2.0.0:
   version "2.0.0"
   resolved "https://auctioncorp.jfrog.io/auctioncorp/api/npm/npm-internal/ms/-/ms-2.0.0.tgz#5608aeadfc00be6c2901df5f9861788de0d597c8"
   integrity sha1-VgiurfwAvmwpAd9fmGF4jeDVl8g=
+
+ms@^2.1.1:
+  version "2.1.2"
+  resolved "https://auctioncorp.jfrog.io/auctioncorp/api/npm/npm-internal/ms/-/ms-2.1.2.tgz#d09d1f357b443f493382a8eb3ccd183872ae6009"
+  integrity sha1-0J0fNXtEP0kzgqjrPM0YOHKuYAk=
 
 multipipe@^0.1.2:
   version "0.1.2"
@@ -1776,6 +1865,11 @@ once@~1.3.0:
   dependencies:
     wrappy "1"
 
+opener@^1.5.1:
+  version "1.5.1"
+  resolved "https://auctioncorp.jfrog.io/auctioncorp/api/npm/npm-internal/opener/-/opener-1.5.1.tgz#6d2f0e77f1a0af0032aca716c2c1fbb8e7e8abed"
+  integrity sha1-bS8Od/GgrwAyrKcWwsH7uOfoq+0=
+
 orchestrator@^0.3.0:
   version "0.3.8"
   resolved "https://auctioncorp.jfrog.io/auctioncorp/api/npm/npm-internal/orchestrator/-/orchestrator-0.3.8.tgz#14e7e9e2764f7315fbac184e506c7aa6df94ad7e"
@@ -1923,6 +2017,15 @@ pinkie@^2.0.0:
   resolved "https://auctioncorp.jfrog.io/auctioncorp/api/npm/npm-internal/pinkie/-/pinkie-2.0.4.tgz#72556b80cfa0d48a974e80e77248e80ed4f7f870"
   integrity sha1-clVrgM+g1IqXToDnckjoDtT3+HA=
 
+portfinder@^1.0.25:
+  version "1.0.26"
+  resolved "https://auctioncorp.jfrog.io/auctioncorp/api/npm/npm-internal/portfinder/-/portfinder-1.0.26.tgz#475658d56ca30bed72ac7f1378ed350bd1b64e70"
+  integrity sha1-R1ZY1WyjC+1yrH8TeO01C9G2TnA=
+  dependencies:
+    async "^2.6.2"
+    debug "^3.1.1"
+    mkdirp "^0.5.1"
+
 posix-character-classes@^0.1.0:
   version "0.1.1"
   resolved "https://auctioncorp.jfrog.io/auctioncorp/api/npm/npm-internal/posix-character-classes/-/posix-character-classes-0.1.1.tgz#01eac0fe3b5af71a2a6c02feabb8c1fef7e00eab"
@@ -1952,6 +2055,11 @@ punycode@^2.1.0, punycode@^2.1.1:
   version "2.1.1"
   resolved "https://auctioncorp.jfrog.io/auctioncorp/api/npm/npm-internal/punycode/-/punycode-2.1.1.tgz#b58b010ac40c22c5657616c8d2c2c02c7bf479ec"
   integrity sha1-tYsBCsQMIsVldhbI0sLALHv0eew=
+
+qs@^6.4.0:
+  version "6.9.4"
+  resolved "https://auctioncorp.jfrog.io/auctioncorp/api/npm/npm-internal/qs/-/qs-6.9.4.tgz#9090b290d1f91728d3c22e54843ca44aea5ab687"
+  integrity sha1-kJCykNH5FyjTwi5UhDykSupatoc=
 
 qs@~6.5.2:
   version "6.5.2"
@@ -2099,6 +2207,11 @@ require-main-filename@^2.0.0:
   resolved "https://auctioncorp.jfrog.io/auctioncorp/api/npm/npm-internal/require-main-filename/-/require-main-filename-2.0.0.tgz#d0b329ecc7cc0f61649f62215be69af54aa8989b"
   integrity sha1-0LMp7MfMD2Fkn2IhW+aa9UqomJs=
 
+requires-port@^1.0.0:
+  version "1.0.0"
+  resolved "https://auctioncorp.jfrog.io/auctioncorp/api/npm/npm-internal/requires-port/-/requires-port-1.0.0.tgz#925d2601d39ac485e091cf0da5c6e694dc3dcaff"
+  integrity sha1-kl0mAdOaxIXgkc8NpcbmlNw9yv8=
+
 resolve-dir@^1.0.0, resolve-dir@^1.0.1:
   version "1.0.1"
   resolved "https://auctioncorp.jfrog.io/auctioncorp/api/npm/npm-internal/resolve-dir/-/resolve-dir-1.0.1.tgz#79a40644c362be82f26effe739c9bb5382046f43"
@@ -2170,6 +2283,11 @@ scss-tokenizer@^0.2.3:
   dependencies:
     js-base64 "^2.1.8"
     source-map "^0.4.2"
+
+secure-compare@3.0.1:
+  version "3.0.1"
+  resolved "https://auctioncorp.jfrog.io/auctioncorp/api/npm/npm-internal/secure-compare/-/secure-compare-3.0.1.tgz#f1a0329b308b221fae37b9974f3d578d0ca999e3"
+  integrity sha1-8aAymzCLIh+uN7mXTz1XjQypmeM=
 
 "semver@2 || 3 || 4 || 5":
   version "5.7.1"
@@ -2547,6 +2665,13 @@ union-value@^1.0.0:
     is-extendable "^0.1.1"
     set-value "^2.0.1"
 
+union@~0.5.0:
+  version "0.5.0"
+  resolved "https://auctioncorp.jfrog.io/auctioncorp/api/npm/npm-internal/union/-/union-0.5.0.tgz#b2c11be84f60538537b846edb9ba266ba0090075"
+  integrity sha1-ssEb6E9gU4U3uEbtuboma6AJAHU=
+  dependencies:
+    qs "^6.4.0"
+
 unique-stream@^1.0.0:
   version "1.0.0"
   resolved "https://auctioncorp.jfrog.io/auctioncorp/api/npm/npm-internal/unique-stream/-/unique-stream-1.0.0.tgz#d59a4a75427447d9aa6c91e70263f8d26a4b104b"
@@ -2571,6 +2696,11 @@ urix@^0.1.0:
   version "0.1.0"
   resolved "https://auctioncorp.jfrog.io/auctioncorp/api/npm/npm-internal/urix/-/urix-0.1.0.tgz#da937f7a62e21fec1fd18d49b35c2935067a6c72"
   integrity sha1-2pN/emLiH+wf0Y1Js1wpNQZ6bHI=
+
+url-join@^2.0.5:
+  version "2.0.5"
+  resolved "https://auctioncorp.jfrog.io/auctioncorp/api/npm/npm-internal/url-join/-/url-join-2.0.5.tgz#5af22f18c052a000a48d7b82c5e9c2e2feeda728"
+  integrity sha1-WvIvGMBSoACkjXuCxenC4v7tpyg=
 
 use@^3.1.0:
   version "3.1.1"

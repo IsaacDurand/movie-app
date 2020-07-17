@@ -21,9 +21,15 @@ gulp.task('scss', function () {
         .pipe(gulp.dest('./dist'));
 });
 
+gulp.task('html', function () {
+  return gulp.src('./src/index.html')
+    .pipe(gulp.dest('./dist'))
+})
+
 gulp.task('watch', function () {
     gulp.watch(clientApp + '*.js', ['build']);
     gulp.watch('./src/styles.scss', ['scss'])
+    gulp.watch('./src/index.html', ['html'])
 });
 
-gulp.task('default', ['scss', 'build', 'watch']);
+gulp.task('default', ['scss', 'build', 'html', 'watch']);
