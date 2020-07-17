@@ -26,16 +26,6 @@
                 </small>
                 <div id="movie-details">
                     <div id="movie-overview">
-                        <img id="large-poster"
-                             ng-attr-alt="Large poster for {{vm.selectedMovie.title}}"
-                             ng-src="https://image.tmdb.org/t/p/w500/{{vm.selectedMovie.poster_path}}"
-                             height="725px"
-                             width="500px">
-                        <img id="small-poster"
-                             ng-attr-alt="Small poster for {{vm.selectedMovie.title}}"
-                             ng-src="https://image.tmdb.org/t/p/w500/{{vm.selectedMovie.poster_path}}"
-                             height="375px"
-                             width="250px">
                         <div>
                             <p ng-bind="vm.selectedMovie.overview"></p>
                         </div>

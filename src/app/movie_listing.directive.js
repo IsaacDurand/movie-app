@@ -22,9 +22,7 @@
             scope: {
                 movie: '<'
             },
-            template: '<div class="movie-listing"><img ng-attr-alt="Poster for {{vm.movie.title}}" ' +
-            'ng-src="https://image.tmdb.org/t/p/w500/{{vm.movie.poster_path}}" height="375px" width="250px">' +
-            '<p ng-bind="vm.movie.title"></p>' +
+            template: '<div class="movie-listing"><p ng-bind="vm.movie.title"></p>' +
             '<p>Released <span ng-bind="vm.movie.release_date | date: \'longDate\' "></span></p></div>'
         };
         return directive;
@@ -36,4 +34,3 @@
     }
 
 })();
-

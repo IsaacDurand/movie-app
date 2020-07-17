@@ -63,10 +63,6 @@ body {
   }
 }
 
-#large-poster {
-  display: none;
-}
-
 #actor-container {
   display: flex;
   flex-wrap: wrap;
@@ -80,10 +76,6 @@ actor-card {
   padding: $defaultCushion;
   text-align: center;
   width: 150px;
-
-  .no-photo {
-    font-style: italic;
-  }
 }
 
 #loading-cast {
@@ -149,19 +141,6 @@ actor-card {
       position: absolute;
       right: 0;
       top: 0;
-    }
-  }
-}
-
-// Additional styling for desktop
-@media (min-width: 992px) {
-  #main {
-    #small-poster {
-      display: none;
-    }
-
-    #large-poster {
-      display: block;
     }
   }
 }
