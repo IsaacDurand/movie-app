@@ -12,7 +12,6 @@
     movieListing.$inject = [];
 
     /* @ngInject */
-    // TODO: remove any unneeded things
     function movieListing() {
         var directive = {
             bindToController: true,
