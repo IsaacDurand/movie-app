@@ -32,4 +32,4 @@ gulp.task('watch', function () {
     gulp.watch('./src/index.html', ['html'])
 });
 
-gulp.task('default', ['scss', 'build', 'html', 'watch']);
+gulp.task('default', ['scss', 'build', 'html']);

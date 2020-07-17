@@ -4,8 +4,9 @@
   "description": "Search for information about your favorite movies",
   "main": "gulpfile.js",
   "scripts": {
-    "build": "gulp",
+    "build:watch": "gulp && gulp watch",
     "serve": "http-server ./dist -o /index.html",
+    "start": "gulp && yarn serve",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
